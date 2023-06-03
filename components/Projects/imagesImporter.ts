@@ -6,7 +6,9 @@ const leo360: any[] = importAll(require.context('./images/leo360', false, /\.(pn
 const gozarban: any[] = importAll(
   require.context('./images/gozarban', false, /\.(png|jpe?g|svg)$/)
 );
-
+const bookcurve: any[] = importAll(
+  require.context('./images/bookcurve', false, /\.(png|jpe?g|svg)$/)
+);
 // const images: string[] = [leo.src];
 
-export { leo360, gozarban };
+export { leo360, gozarban, bookcurve };

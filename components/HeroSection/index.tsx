@@ -7,6 +7,8 @@ import {
   Divider,
   Group,
   ActionIcon,
+  Button,
+  Flex,
 } from '@mantine/core';
 import { IconBrandGithub, IconBrandGitlab, IconBrandTelegram, IconMail } from '@tabler/icons';
 import { ReactangleShape } from './assets/Reactangle';
@@ -127,12 +129,14 @@ export function HeroText() {
     <Container className={classes.wrapper} size={1400}>
       <ReactangleShape className={classes.shape} />
       <div className={classes.inner}>
-        <Title className={classes.title}>
-          {`Hello!
+        <Flex direction="column" gap="lg">
+          <Title className={classes.title}>
+            {`Hello!
          I'm 
          Mohammdreza Aghapour`}
-          {/* <Text component="span" className={classes.highlight} inherit></Text>{' '} */}
-        </Title>
+            {/* <Text component="span" className={classes.highlight} inherit></Text>{' '} */}
+          </Title>
+        </Flex>
 
         <Divider orientation="vertical" />
 
@@ -173,6 +177,19 @@ export function HeroText() {
               <IconBrandTelegram />
             </ActionIcon>
           </Group>
+          <Button
+            w={170}
+            mt={30}
+            // variant="default"
+            color="gray"
+            // leftIcon={<IconFileDownload />}
+            size="md"
+            uppercase
+            component="a"
+            href="/cv.pdf"
+          >
+            Download CV
+          </Button>
         </Container>
       </div>
     </Container>

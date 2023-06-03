@@ -39,13 +39,13 @@ const useStyles = createStyles((theme) => ({
 interface BadgeCardProps {
   image: string;
   title: string;
-  country: string;
   description: string;
   images: any[];
+  techs: string[];
 }
 
-export function ProjectCard({ image, title, description, country, images }: BadgeCardProps) {
-  const { classes } = useStyles();
+export function ProjectCard({ image, title, description, images, techs }: BadgeCardProps) {
+  const { classes, theme } = useStyles();
   const [opened, { open, close }] = useDisclosure(false);
 
   const slides = images.map((url: any) => (
@@ -71,13 +71,23 @@ export function ProjectCard({ image, title, description, country, images }: Badg
           <Text fz="lg" fw={500}>
             {title}
           </Text>
-          <Badge size="sm">{country}</Badge>
         </Group>
         <div className={classes.description}>
           <Text fz="sm" mt="xs">
             {description}
           </Text>
         </div>
+
+        <Group mt={15} spacing={5}>
+          {techs.map((tech) => (
+            <Badge
+              size="sm"
+              color={Object.keys(theme.colors)[Math.floor(Math.random() * (12 - 2)) + 2]}
+            >
+              {tech}
+            </Badge>
+          ))}
+        </Group>
       </Card.Section>
 
       <Group mt="xs">
