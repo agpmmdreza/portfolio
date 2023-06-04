@@ -9,9 +9,10 @@ import {
   ActionIcon,
   Button,
   Flex,
+  Image,
 } from '@mantine/core';
 import { IconBrandGithub, IconBrandGitlab, IconBrandTelegram, IconMail } from '@tabler/icons';
-import { ReactangleShape } from './assets/Reactangle';
+import bg from './assets/bg.png';
 
 const useStyles = createStyles((theme) => ({
   wrapper: {
@@ -58,7 +59,7 @@ const useStyles = createStyles((theme) => ({
   title: {
     maxWidth: '450px',
     textAlign: 'start',
-    fontWeight: 800,
+    fontWeight: 900,
     fontSize: rem(60),
     letterSpacing: -1,
     color: theme.colorScheme === 'dark' ? theme.white : theme.black,
@@ -127,13 +128,14 @@ export function HeroText() {
 
   return (
     <Container className={classes.wrapper} size={1400}>
-      <ReactangleShape className={classes.shape} />
+      {/* <ReactangleShape className={classes.shape} /> */}
+      <Image className={classes.shape} src={bg.src} />
       <div className={classes.inner}>
         <Flex direction="column" gap="lg">
           <Title className={classes.title}>
-            {`Hello!
+            {`Hi!
          I'm 
-         Mohammdreza Aghapour`}
+         Mohammadreza Aghapour`}
             {/* <Text component="span" className={classes.highlight} inherit></Text>{' '} */}
           </Title>
         </Flex>
@@ -186,7 +188,7 @@ export function HeroText() {
             size="md"
             uppercase
             component="a"
-            href="/cv.pdf"
+            href="/CV_MohammadrezaAghapour.pdf"
           >
             Download CV
           </Button>

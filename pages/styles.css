@@ -4,3 +4,7 @@ html {
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
 }
+
+body {
+  background-color: #060b27 !important;
+}

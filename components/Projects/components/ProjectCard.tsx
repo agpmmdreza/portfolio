@@ -73,7 +73,7 @@ export function ProjectCard({ image, title, description, images, techs }: BadgeC
           </Text>
         </Group>
         <div className={classes.description}>
-          <Text fz="sm" mt="xs">
+          <Text color="dimmed" fz="sm" mt="xs">
             {description}
           </Text>
         </div>
