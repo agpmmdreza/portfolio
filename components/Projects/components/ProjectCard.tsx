@@ -5,7 +5,18 @@ import { useDisclosure } from '@mantine/hooks';
 const useStyles = createStyles((theme) => ({
   card: {
     backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.white,
-    maxWidth: '350px',
+    // maxWidth: '350px',
+    height: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+
+    background: 'rgba( 41, 51, 127, 0.3 )',
+    boxShadow: '0 8px 32px 0 rgba( 31, 38, 135, 0.37 )',
+    backdropFilter: 'blur(14px)',
+    WebkitBackdropFilter: 'blur(14px)',
+    borderRadius: '10px',
+    border: '1px solid rgba(255, 255, 255, 0.18)',
   },
 
   description: {
@@ -17,9 +28,6 @@ const useStyles = createStyles((theme) => ({
   },
 
   section: {
-    borderBottom: `${rem(1)} solid ${
-      theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[3]
-    }`,
     paddingLeft: theme.spacing.md,
     paddingRight: theme.spacing.md,
     paddingBottom: theme.spacing.md,
@@ -33,6 +41,14 @@ const useStyles = createStyles((theme) => ({
     textTransform: 'uppercase',
     fontSize: theme.fontSizes.xs,
     fontWeight: 700,
+  },
+
+  buttonContainer: {
+    paddingTop: theme.spacing.md,
+    borderTop: `${rem(1)} solid ${
+      theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[3]
+    }`,
+    marginTop: 'auto',
   },
 }));
 
@@ -90,7 +106,7 @@ export function ProjectCard({ image, title, description, images, techs }: BadgeC
         </Group>
       </Card.Section>
 
-      <Group mt="xs">
+      <Group className={classes.buttonContainer}>
         <Button radius="md" style={{ flex: 1 }} onClick={open}>
           Show details
         </Button>

@@ -1,25 +1,25 @@
-import {
-  createStyles,
-  Title,
-  Text,
-  Container,
-  rem,
-  Chip,
-  Group,
-  Timeline,
-  Center,
-} from '@mantine/core';
-import { IconGitBranch, IconGitCommit, IconGitPullRequest, IconMessageDots } from '@tabler/icons';
+import { createStyles, Title, Text, Container, rem, Timeline, Center } from '@mantine/core';
+import Image from 'next/image';
 
 const useStyles = createStyles((theme) => ({
   wrapper: {
     position: 'relative',
     // paddingTop: rem(220),
     // paddingBottom: rem(150),
+    height: '100%',
+    padding: '50px 70px',
+    background: 'rgba( 41, 51, 127, 0.15 )',
+    // boxShadow: '0 8px 32px 0 rgba( 31, 38, 135, 0.37 )',
+    backdropFilter: 'blur(14px)',
+    WebkitBackdropFilter: 'blur(14px)',
+    borderRadius: '10px',
+    border: '1px solid rgba(255, 255, 255, 0.18)',
 
     [theme.fn.smallerThan('sm')]: {
-      paddingTop: rem(80),
+      paddingTop: rem(50),
       paddingBottom: rem(60),
+      paddingRight: rem(35),
+      paddingLeft: rem(35),
     },
   },
 
@@ -27,31 +27,44 @@ const useStyles = createStyles((theme) => ({
     position: 'relative',
     zIndex: 1,
   },
-}));
 
-const SKILLS_ARRAY: string[] = [
-  'React.js',
-  'Next.js',
-  'Javascript',
-  'Typescript',
-  'HTML',
-  'CSS',
-  'Sass',
-  'Tailwind',
-  'Bootstrap',
-  'Material-UI',
-  'Redux',
-  'Tanstack Libs',
-  'HTML/CSS',
-  'Node.js',
-  'Git & Github',
-];
+  eclipse: {
+    position: 'absolute',
+    right: 0,
+    top: 0,
+    opacity: '0.9',
+  },
+
+  eclipseBottom: {
+    WebkitTransform: 'scaleX(-1)',
+    transform: 'scaleX(-1)',
+    position: 'absolute',
+    left: 0,
+    bottom: 0,
+    opacity: '0.9',
+  },
+}));
 
 export function Experience() {
   const { classes } = useStyles();
 
   return (
-    <Container className={classes.wrapper} size={500}>
+    <Container className={classes.wrapper}>
+      <Image
+        src="/assets/blue-ecl.svg"
+        alt="e"
+        width={300}
+        height={300}
+        className={classes.eclipse}
+      />
+
+      <Image
+        src="/assets/purple-ecl.svg"
+        alt="e"
+        width={400}
+        height={400}
+        className={classes.eclipseBottom}
+      />
       <Title align="start" weight={800} pb={40}>
         Experience
       </Title>
@@ -73,7 +86,7 @@ export function Experience() {
               real-world projects for a prominent health company.
             </Text>
             <Text size="xs" mt={4}>
-              2021 - Present
+              2021 - 2023
             </Text>
           </Timeline.Item>
         </Timeline>

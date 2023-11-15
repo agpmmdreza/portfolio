@@ -31,15 +31,17 @@ const PROJECT_LIST = [
 
 const useStyles = createStyles((theme) => ({
   wrapper: {
-    position: 'relative',
+    // position: 'relative',
     paddingTop: rem(60),
     paddingBottom: rem(150),
-    height: '1000px',
-    scrollSnapAlign: 'start',
+    // height: '1000px',
+    // scrollSnapAlign: 'start',
 
     [theme.fn.smallerThan('sm')]: {
       paddingTop: rem(80),
       paddingBottom: rem(60),
+      paddingLeft: rem(40),
+      paddingRight: rem(40),
     },
   },
 
@@ -58,9 +60,9 @@ export function Projects() {
         Projects
       </Title>
 
-      <Grid gutter={20}>
+      <Grid gutter={30}>
         {PROJECT_LIST.map((prj) => (
-          <Grid.Col span={4}>
+          <Grid.Col sm={12} md={6} lg={4}>
             <ProjectCard
               title={prj.title}
               description={prj.description}
